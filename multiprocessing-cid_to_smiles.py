@@ -18,9 +18,9 @@ def cid_to_smiles(cid):
     time.sleep(0.5)
     return com_smiles #str 반환
 cid_list = list(df['PubChem CID']) #cid를 list로 가져오기
-output_dict = {} #빈 딕셔너리 생성
 n = len(cid_list)//1000 #리스트를 1000으로 나눈 몫 저장
 for i in range(n):
+    output_dict = {} #빈 딕셔너리 생성 및 반복마다 비워주기
     example = './333/MP_SMILES'+'_'.join(["{}"])+'.csv'
     filename= example.format(i+1) #포맷팅 사용하여 중간중간 저장을 위한 파일네임 형성
     pool = multiprocessing.Pool(processes=3) #프로세서 3개 사용
