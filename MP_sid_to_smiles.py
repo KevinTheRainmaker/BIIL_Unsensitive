@@ -49,8 +49,7 @@ for i in range(n):
     # sid_smiles_dict라는 이름으로 딕셔너리 형성
     sid_smiles_dict = dict(zip(sid_list[i*1000:(i+1)*1000], smiles))
     output_dict.update(sid_smiles_dict)  # out_put_dict에 업데이트
-    DF = pd.DataFrame.from_dict(output_dict, orient='index', columns=[
-                                'SMILES'])  # 딕셔너리를 데이터프레임으로 변환
+    DF = pd.DataFrame.from_dict(output_dict, orient='index', columns=['SMILES'])  # 딕셔너리를 데이터프레임으로 변환
     #첫 번째 column에 cid, 두 번째 column에 SMILES 저장
     DF.to_csv(filename)  # 데이터프레임을 csv파일로 저장
 
