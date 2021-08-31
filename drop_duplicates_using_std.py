@@ -9,7 +9,7 @@ def dropDupl(df):
     filtering['std'].fillna(0, inplace=True)
     name = df.columns[-1]
     for i,row in filtering.iterrows():
-        if filtering.at[i, 'std'] < 0.01:
+        if filtering.at[i, 'std'] < 0.05:
             filtering.at[i,f'{name}'] = filtering.at[i,'mean']
             filtering.at[i,'status'] = '1'
         else:
